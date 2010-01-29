@@ -1,0 +1,46 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--Fractals----------------------------------------------------------------------------------------------------------------------------------coded by Corbin--------IAmCorbin.net---
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V 0.1
+1/21/2010
+	Updates
+		Texture
+			Added changeFile function
+		Shape
+			Added file array, row and totalRows variables 
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--wizSDL_2DEngine---------------------------------------------------------------------------------------------------------------------------coded by Corbin--------IAmCorbin.net---
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V 0.2
+1/13/2010
+
+	Updates:
+		WizSDLapp
+			cleaned up operation, virtual handleEvents and handleUserInput functions created to further simplify application creation ('run' is now only in parent)
+		Texture
+			Added support for animations, set transparent color key to (255,0,255)
+		Shape
+			draw function now checks for animations and controls the frame changes
+		testEngine
+			Cleaned up to use new handleEvents and handleUserInput functions
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V 0.1
+1/12/2010
+
+Engine includes (classes):
+
+	WizSDLapp
+		contains all the basic code required to start an SDL application: initializing SDL, opening joysticks, setting video mode and creating the application window. Holds the 			main application loop and stores gameover state.
+	Texture
+		class to hold a bmp texture file. User can pass in a texture file name, size of textures (all must be uniform on same sheet), and the number of textures per row
+	Shape
+		basic class to create a colored or textured SDL rectangle
+	Move
+		class to handle user controlled movements
+	testEngine
+		Must derive class from WizSDLapp to create a new application, this is an example
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

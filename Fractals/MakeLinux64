@@ -1,0 +1,35 @@
+# Project: Fractals
+# Using wizSDL_2DEngine
+# Makefile for building Linux_64Bit binary
+
+CPP       = gcc
+OBJ       = src/WizSDLapp.o src/Shape.o src/Textures.o src/Move.o
+LIBS      = -lSDL -lSDL_mixer
+BIN       = Fractals_Linux64
+CXXFLAGS  = `sdl-config --cflags --libs` -g
+
+
+all: $(OBJ)
+	$(CPP) $(CXXFLAGS) $(OBJ) src/Fractals.cpp -o $(BIN) $(LIBS)
+
+clean:
+	rm $(BIN)
+
+cleanall:
+	rm $(BIN) $(OBJ)
+
+cleanObj:
+	rm $(OBJ)
+
+WizSDLapp.o : src/WizSDLapp.h src/WizSDLapp.cpp
+	$(CPP) $(CXXFLAGS) src/WizSDLapp.cpp -o $@ -c
+
+Shape.o : src/Shape.h src/Shape.cpp
+	$(CPP) $(CXXFLAGS) src/Shape.cpp -o $@ -c
+
+Textures.o : src/Textures.h src/Textures.cpp
+	$(CPP) $(CXXFLAGS) src/Textures.cpp -o $@ -c
+
+Move.o : src/Move.h src/Move.cpp
+	$(CPP) $(CXXFLAGS) src/Move.cpp -o $@ -c
+
