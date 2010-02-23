@@ -26,7 +26,7 @@ Fractals::Fractals() {
 	background = new Textures(backgroundFiles,320,240,5);
 	//create shape and apply background texture
 	Shape::addNew(new Shape(0,0,320,240,background,1));
-	
+
 	//walking Owl
 	owlWalk = new Textures((char*)"data/textures/owlWalk_a21x30.bmp",21,30,3);
 	owlWalk->setAnimationSpeed(100);
